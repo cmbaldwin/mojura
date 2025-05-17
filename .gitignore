@@ -39,7 +39,7 @@
 /node_modules
 
 # Kamal Secrets
-.kamal/
+.kamal/secrets
 
 # Deployment
 /config/deploy.yml
