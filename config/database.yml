@@ -19,7 +19,6 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-
 development:
   <<: *default
   database: mojura_development
@@ -81,9 +80,11 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: mojura_production
-    username: mojura
-    password: <%= ENV["MOJURA_DATABASE_PASSWORD"] %>
+    database: <%= ENV.fetch("POSTGRES_DB", "mojura_production") %>
+    username: <%= ENV.fetch("POSTGRES_USER", "mojura") %>
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
+    host: <%= ENV.fetch("DB_HOST", "mojura-postgres") %>
+    port: <%= ENV.fetch("DB_PORT", 5432) %>
   cache:
     <<: *primary_production
     database: mojura_production_cache

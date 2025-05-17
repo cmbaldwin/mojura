@@ -1,3 +1,5 @@
+# Fresh start make sure to run 'kamal acccesory boot postgres' and 'kamal accessory start postgres' before running 'kamal deploy'
+# Or just run 'kamal setup' to do everything in one go.
 # Name of your application. Used to uniquely configure containers.
 service: mojura
 
