@@ -40,3 +40,6 @@
 
 # Kamal Secrets
 .kamal/
+
+# Deployment
+/config/deploy.yml
