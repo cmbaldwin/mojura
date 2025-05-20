@@ -1,0 +1,39 @@
+{
+	"disposition": {
+		"mapEditor": {
+			"x": 128,
+			"y": 21,
+			"width": 280,
+			"height": 216
+		},
+		"tilesheet": {
+			"x": 416,
+			"y": 21,
+			"zoom": 2
+		},
+		"tileBrush": {
+			"x": 0,
+			"y": 181,
+			"width": 120,
+			"height": 56,
+			"foldConfig": {}
+		},
+		"palette": {
+			"x": 0,
+			"y": 261
+		},
+		"fileExplorer": {
+			"x": 0,
+			"y": 21,
+			"width": 120,
+			"height": 136,
+			"assets": {
+				"maps.json": {}
+			}
+		}
+	},
+	"windowSize": {
+		"width": 685,
+		"height": 331
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"_type": "maps",
+	"maps": [
+		{
+			"w": 8,
+			"h": 4,
+			"name": "map",
+			"sheet": "",
+			"data": "!!|J"
+		}
+	]
+}

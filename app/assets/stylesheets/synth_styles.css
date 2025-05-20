@@ -1,0 +1,460 @@
+body {
+  font-family: "Arial", "Verdana";
+  font-weight: bold;
+  font-size: 11px;
+  user-select: none;
+  background-color: #7f7f7f;
+  background-image: url(../img/background.png);
+  background-repeat: repeat;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #777;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+.menuHeader {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background-color: #ccc;
+  z-index: 999;
+  box-shadow: 1px 1px 6px #616060;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.menuItem {
+  display: inline-block;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-top: 0;
+  height: 15px;
+  border-radius: 1px;
+}
+
+.menuItem:hover {
+  background-color: #ff2;
+}
+
+.submenu {
+  position: absolute;
+  background-color: #ccc;
+  border: #999 1px solid;
+  border-radius: 4px;
+  box-shadow: 1px 1px 6px #333;
+}
+
+.submenuItem {
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-top: 2px;
+  height: 17px;
+  border-radius: 4px;
+}
+
+.submenuItem:hover {
+  background-color: #ff2;
+}
+
+.submenuSeparator {
+  width: 100%;
+  height: 1px;
+  background-color: #999;
+}
+
+.connectorMenu {
+  position: absolute;
+  cursor: pointer;
+  z-index: 14;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2px;
+  border: solid #aaa 3px;
+  border-radius: 4px;
+}
+
+.connectorMenuEntry {
+  font-size: 12px;
+}
+
+.connectorMenuSeparator {
+  height: 2px;
+  background-color: #aaa;
+}
+
+.connectorMenuEntry:hover {
+  background-color: #ff0;
+}
+
+.panel {
+  position: absolute;
+  top: 30px;
+  z-index: 10;
+  background-color: #ccc;
+  /*width: 100px;*/
+  box-shadow: 1px 1px 10px #666d63;
+  border-radius: 4px;
+  border: solid #666 2px;
+  padding: 2px;
+}
+
+.handle {
+  height: 13px;
+  padding: 1px;
+  background-color: #aaa;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.panelTitle {
+  margin-left: 2px;
+  display: inline-block;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.closeButton {
+  background-image: url(../img/close.png);
+  width: 11px;
+  height: 11px;
+  margin: 1px;
+  background-color: #ccc;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.closeButton:hover {
+  background-color: #fff;
+}
+
+.libraryTabHolder {
+  margin-top: 1px;
+  width: 180px;
+}
+
+.libraryTab {
+  margin: 1px;
+  width: 58px;
+  overflow: hidden;
+  border-radius: 3px;
+  background-color: #aaa;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.libraryTab:hover {
+  background-color: #bbb;
+}
+
+.libraryListHolder {
+}
+
+.libraryList {
+  /*max-height: 253px;*/
+  height: 253px;
+  padding: 2px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border: inset 2px #e8eae9;
+  margin: 2px 0;
+  border-radius: 4px;
+}
+
+.libraryEntry {
+  cursor: pointer;
+  border: 1px;
+  border-radius: 3px;
+  z-index: 11;
+  padding: 1px;
+  border-bottom: solid 1px #c0c0c0;
+}
+
+/*.libraryEntry:nth-child(odd) {
+    background: #C2C2C2;
+}*/
+
+.libraryEntry:hover {
+  /*transform: scale(1.2, 1.2);*/
+  /*border-radius: 3px;*/
+  background-color: #ff0;
+  /*box-shadow: 0px 0px 10px #333;*/
+}
+
+.bufferLibraryTags {
+  width: 175px;
+}
+
+.tagInput {
+  display: inline-block;
+  vertical-align: top;
+  margin: 2px 0;
+  border-radius: 4px;
+  padding: 0 3px;
+  font-size: 11px;
+  width: 100px;
+}
+
+.tags {
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.tag {
+  display: inline-block;
+  margin: 3px 2px;
+  height: 13px;
+  padding: 1px;
+  border-radius: 3px;
+  background-color: #aaa;
+}
+
+.tagTitle {
+  display: inline-block;
+  margin: 0 3px;
+  overflow: hidden;
+}
+
+.waveformCanvas {
+  background-color: #44494c;
+  vertical-align: bottom;
+  border-radius: 4px;
+}
+
+.audioEditorMenu {
+  position: relative;
+  margin: 10px;
+  margin-top: -30px;
+  height: 20px;
+  /*overflow: hidden;*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.editorButton {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: #ccc;
+  margin: 0 2px;
+}
+
+.editorButton:hover {
+  background-color: #fff;
+}
+
+.flexSpacer {
+  flex-grow: 1;
+}
+
+.saveIcon {
+  background-image: url(../img/iconSave.png);
+}
+.loopIcon {
+  background-image: url(../img/iconLoop.png);
+}
+.shotIcon {
+  background-image: url(../img/iconShot.png);
+}
+.irIcon {
+  background-image: url(../img/iconIR.png);
+}
+
+.hscroll {
+  overflow-x: scroll;
+}
+
+.cables {
+  /* This is the canvas used to draw cables */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  pointer-events: none;
+}
+
+.overlay {
+  /* This is the canvas used to draw infos on
+	 * top of everythings (connection lines, etc.)
+	 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.selected {
+  background-color: #fff;
+}
+
+.module {
+  font-size: 11px;
+  /*cursor: default;*/
+  position: absolute;
+  border: 1px;
+  background-color: #ccc;
+  border: outset 2px #e8eae9;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.bufferAudio {
+  background-color: #7cd4a7;
+  border-color: #c1f1d0;
+  border-radius: 4px;
+}
+.bufferFailed {
+  background-color: #ea455c;
+  border-color: #dc9797;
+}
+.bufferIR {
+  background-color: #65c6ff;
+  border-color: #81ecf7;
+}
+.bufferProcedural {
+  background-color: #efd67b;
+  border-color: #faffae;
+}
+
+.module:hover {
+  box-shadow: 0px 0px 10px #07818e;
+  z-index: 8;
+}
+
+.dummy {
+  position: absolute;
+  border: dashed #f00 4px;
+  z-index: 15;
+}
+
+.connector {
+  position: absolute;
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+}
+
+.eventIn {
+  background-image: url(../img/connector/in-Y.png);
+}
+.audioIn {
+  background-image: url(../img/connector/in-R.png);
+}
+.paramIn {
+  background-image: url(../img/connector/in-G.png);
+}
+.eventOut {
+  background-image: url(../img/connector/out-Y.png);
+}
+.audioOut {
+  background-image: url(../img/connector/out-R.png);
+}
+.paramOut {
+  background-image: url(../img/connector/out-G.png);
+}
+.eventIn-fill {
+  background-image: url(../img/connector/in-Y-fill.png);
+}
+.audioIn-fill {
+  background-image: url(../img/connector/in-R-fill.png);
+}
+.paramIn-fill {
+  background-image: url(../img/connector/in-G-fill.png);
+}
+.eventOut-fill {
+  background-image: url(../img/connector/out-Y-fill.png);
+}
+.audioOut-fill {
+  background-image: url(../img/connector/out-R-fill.png);
+}
+.paramOut-fill {
+  background-image: url(../img/connector/out-G-fill.png);
+}
+
+.moduleButton {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 30px;
+  border: 2px solid #616161;
+  background-color: #999;
+  text-align: center;
+  color: #616161;
+}
+
+.moduleButtonTitle {
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+.moduleButton:hover {
+  background-color: #ff0;
+}
+
+.knob {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  background-image: url(../img/knob.png);
+}
+
+.knobMark {
+  background-image: url(../img/knobMark.png);
+}
+
+.label {
+  text-align: center;
+  font-size: 8px;
+  color: #ccc;
+  background-color: #616161;
+  border-radius: 3px;
+  padding-top: 1px;
+}
+
+.knobLabel {
+  width: 23px;
+  margin-top: 24px;
+}
+
+.knobValueDisplay {
+  position: relative;
+  text-align: center;
+  padding-top: 1px;
+  top: -10px;
+  width: 23px;
+  height: 10px;
+  font-size: 8px;
+  background-color: #ff0;
+  border-radius: 2px;
+}
+
+.knobValueNoLabel {
+  top: 6px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.connectorLabel {
+  width: 20px;
+  margin-top: 1px;
+  margin-left: 12px;
+  position: relative;
+}
