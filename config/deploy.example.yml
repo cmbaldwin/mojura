@@ -27,15 +27,12 @@ proxy:
   host: mojura.moab.jp
   forward_headers: true
 
-# Credentials for your image host.
+# Registry credentials for Escalante (HTTP, Tailscale).
 registry:
-  # Specify the registry server, if you're not using Docker Hub
-  server: ${REPO_SERVER}
-  username: AWS
-
-  # Always use an access token rather than real password when possible.
+  server: escalante.tailabd61f.ts.net:5555
+  username: kamal
   password:
-    - AWS_ECR_PASSWORD
+    - KAMAL_REGISTRY_PASSWORD
 
 # Inject ENV variables into containers (secrets come from .kamal/secrets).
 env:
@@ -85,6 +82,8 @@ asset_path: /rails/public/assets
 # Configure the image builder.
 builder:
   arch: amd64
+  provenance: false
+  sbom: false
   remote: ssh://root@${SERVER_IP}
 
   # # Build image via remote server (useful for faster amd64 builds on arm64 computers)
@@ -93,7 +92,6 @@ builder:
   args:
     RUBY_VERSION: 3.4.2
   secrets:
-    - AWS_ECR_PASSWORD
     - RAILS_MASTER_KEY
 
 # Use accessory services (secrets come from .kamal/secrets).
