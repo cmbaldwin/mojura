@@ -155,7 +155,7 @@ GEM
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.25.5)
-    msgpack (1.8.0)
+    msgpack (1.8.2)
     net-imap (0.5.8)
       date
       net-protocol
